@@ -1,3 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # writing routes by hand
+
+  # get '/birds', to: 'birds#index'
+  # get '/birds/:id', to: 'birds#show'
+
+  # using resources to generate routes
+
+  # doing this gives all rest routes which is not always nessisary and can cause problems with search engines if multi routes arnt usesd
+  # resources :birds
+
+  # allows us to specify which routes we want generated
+
+  resources :birds, only: [:index, :show]
 end
